@@ -11,5 +11,12 @@ Proof of Concept to test Vokaturi as part of Voice<=>Emotion API.
 * Return the JSON in HTTP response  
 
 ## Server stuff
-* ffmpeg installation for pydub lib which uses it (CentOS: yum -y install epel-release ;;; rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro ;;; rpm -Uvh ;;; yum -y install ffmpeg ffmpeg-devel  
-* firewall (CentOS: sudo firewall-cmd --zone=public --add-port=9999/tcp)  
+* ffmpeg installation for pydub lib which uses it
+  * CentOS:  
+    * sudo yum -y install epel-release  
+    * sudo rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro  
+    * sudo rpm -Uvh  
+    * sudo yum -y install ffmpeg ffmpeg-devel  
+* firewall  
+  * CentOS:  
+    * sudo firewall-cmd --zone=public --add-port=9999/tcp 
