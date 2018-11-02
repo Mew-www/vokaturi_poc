@@ -1,9 +1,11 @@
 Click==7.0
 Flask==1.0.2
+Flask-Cors==3.0.6
 itsdangerous==0.24
 Jinja2==2.10
 MarkupSafe==1.0
 numpy==1.15.2
 pydub==0.23.0
 scipy==1.1.0
+six==1.11.0
 Werkzeug==0.14.1
