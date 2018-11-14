@@ -1,6 +1,6 @@
 # Environment specific paths
-API_PATH = "../OpenVokaturi-3-0a/api"
-BIN_PATH = "../OpenVokaturi-3-0a/lib/open/linux/OpenVokaturi-3-0-linux64.so"
+API_PATH = "../../OpenVokaturi-3-0a/api"
+BIN_PATH = "../../OpenVokaturi-3-0a/lib/open/linux/OpenVokaturi-3-0-linux64.so"
 import argparse
 import os
 import scipy.io.wavfile

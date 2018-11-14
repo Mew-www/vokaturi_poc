@@ -3,6 +3,10 @@ from flask_cors import CORS, cross_origin
 import base64
 import json
 import random
+import argparse
+import os
+from io import BytesIO
+from kowalski import analysis
 
 app = Flask(__name__)
 CORS(app, support_credentials=True)
@@ -22,24 +26,17 @@ def emotions_api():
         return 'Missing voice (POST) data.', 400
 
     file = request.files[presumably_only_filename]
-    #return json.dumps({
-    #    'audioname': file.filename,
-    #    'data_type': file.content_type,
-    #    'data_in_b64': str(base64.b64encode(file.read()))
-    #})
-    # Return pseudodata for the moment - TODO integration to the vokaturi lib
-    neutral = random.randint(0, 100)
-    happy = random.randint(0, 100-neutral)
-    sad = random.randint(0, 100-neutral-happy)
-    angry = random.randint(0, 100-neutral-happy-sad)
-    fear = 100-neutral-happy-sad-angry
-    return json.dumps({
-        'neutral': neutral,
-        'happy': happy,
-        'sad': sad,
-        'angry': angry,
-        'fear': fear
-    })
+    analysis_results = analysis(BytesIO(file.read()))
+    if analysis_results is not None:
+        return json.dumps(analysis_results)
+    else:
+        return json.dumps({
+            'neutral': 100,
+            'happy': 0,
+            'sad': 0,
+            'angry': 0,
+            'fear': 0
+        })
     
 if __name__ == '__main__':
     app.run(host= '0.0.0.0', port=9999, debug=False)
