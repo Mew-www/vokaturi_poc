@@ -11,10 +11,13 @@ from kowalski import analysis
 app = Flask(__name__)
 CORS(app, support_credentials=True)
 
+@app.route('/interval', methods=['GET'])
+def analysis_interval():
+    return '20'
+
 @app.route('/emotions', methods=['POST'])
 @cross_origin(supports_credentials=True)
 def emotions_api():
-
     # A loose specification - expect single attachment
     available_files = []
     for name in request.files:
