@@ -40,6 +40,6 @@ def emotions_api():
             'angry': 0,
             'fear': 0
         })
-    
+
 if __name__ == '__main__':
-    app.run(host= '0.0.0.0', port=9999, debug=False)
+    app.run(host='0.0.0.0', port=9999, debug=False, ssl_context=('sslcert.pem', 'sslkey.pem'))
