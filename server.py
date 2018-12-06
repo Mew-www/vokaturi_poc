@@ -13,7 +13,7 @@ CORS(app, support_credentials=True)
 
 @app.route('/interval', methods=['GET'])
 def analysis_interval():
-    return '20'
+    return '5'
 
 @app.route('/emotions', methods=['POST'])
 @cross_origin(supports_credentials=True)
