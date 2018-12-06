@@ -1,4 +1,4 @@
-# vokaturi_poc
+# vokaturi_poc_api
 Proof of Concept to test Vokaturi as part of Voice<=>Emotion API.
 
 ![Dataflow: Decode -> Interpret -> Serialize -> Return](https://raw.githubusercontent.com/Mew-www/vokaturi_poc/master/backend_dataflow.png)
